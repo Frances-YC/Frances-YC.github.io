@@ -22,17 +22,23 @@
     var CONFIG = {"hostname":"frances-yc.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://frances-yc.github.io/tags/index.html">
+  <meta name="description" content="Matlab自带的代码静态检查工具使用指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab代码检查">
+<meta property="og:url" content="https://frances-yc.github.io/2025/02/27/Matlab%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/index.html">
 <meta property="og:site_name" content="老废物乐园">
+<meta property="og:description" content="Matlab自带的代码静态检查工具使用指南">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-25T08:07:31.000Z">
-<meta property="article:modified_time" content="2025-02-25T08:08:20.833Z">
+<meta property="article:published_time" content="2025-02-27T02:02:10.000Z">
+<meta property="article:modified_time" content="2025-02-27T02:10:28.942Z">
 <meta property="article:author" content="Pluviophile">
+<meta property="article:tag" content="simulink">
+<meta property="article:tag" content="staticCheck">
+<meta property="article:tag" content="CodeGenerationAdvisor">
+<meta property="article:tag" content="Polyspace">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://frances-yc.github.io/tags/">
+<link rel="canonical" href="https://frances-yc.github.io/2025/02/27/Matlab%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/">
 
 
 <script id="page-configurations">
@@ -40,13 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>tags | 老废物乐园
-</title>
+  <title>Matlab代码检查 | 老废物乐园</title>
   
 
 
@@ -181,51 +186,197 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://frances-yc.github.io/2025/02/27/Matlab%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Pluviophile">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老废物乐园">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Matlab代码检查
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-02-27 10:02:10 / 修改时间：10:10:28" itemprop="dateCreated datePublished" datetime="2025-02-27T10:02:10+08:00">2025-02-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Matlab/" itemprop="url" rel="index"><span itemprop="name">Matlab</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+            <div class="post-description">Matlab自带的代码静态检查工具使用指南</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Code-Generation-Advisor"><a href="#Code-Generation-Advisor" class="headerlink" title="Code Generation Advisor"></a>Code Generation Advisor</h1><ol>
+<li><p>打开方式：simulink-&gt;Code-&gt;C&#x2F;C++ Code-&gt;Code Generation Advisor</p>
+</li>
+<li><p>使用方法：</p>
+<ul>
+<li><p>点击Code Generation Advisor，弹出System Selector对话框，选择需要进行语法检查的模型，可以是全部模型，也可以是子模型。选择后点击OK</p>
+</li>
+<li><p>进入Code Generation Advisor界面，在Code Generation Objective中可以选择代码的生成形式</p>
+<ul>
+<li><p>Execution efficiency:代码生成配置，以代码执行效率优先</p>
+</li>
+<li><p>ROM efficiency：代码生成配置，以少占用ROM空间优先（ERT配置）</p>
+</li>
+<li><p>RAM efficiency：代码生成配置，以少占用RAM空间优先（ERT配置）</p>
+</li>
+<li><p>Traceability：代码生成配置，提供模型元素和代码之间的映射（ERT配置）</p>
+</li>
+<li><p>Safety precaution：代码生成配置，提高生成代码的清晰度、确定性、鲁棒性、可验证性（ERT配置）</p>
+</li>
+<li><p>Debugging：代码生成配置，用以调试代码生成构建过程</p>
+</li>
+<li><p>MISRA C：2012 guidelines：代码生成配置，用以提高代码对MISRA C：2012准则的遵守</p>
+</li>
+<li><p>Polyspace：代码生成配置，为后续继续使用Polyspace进行代码分析</p>
+<p>当完成选择后，左侧面板会出现相应的Objective</p>
+</li>
+</ul>
+</li>
+<li><p>点击Run Selected Checks，查看检查结果，修复警告与故障。</p>
+</li>
+</ul>
+</li>
+<li><p>Warning类型：</p>
+<ul>
+<li>参数数值设置与Objective配置冲突</li>
+<li>模型生成代码的设置与Objective选项冲突</li>
+</ul>
+</li>
+</ol>
+<h1 id="Polyspace"><a href="#Polyspace" class="headerlink" title="Polyspace"></a>Polyspace</h1><ol>
+<li><p>打开方式：应用程序-&gt;代码验证-&gt;Polyspace Bug Finder</p>
+</li>
+<li><p>使用方法：</p>
+</li>
+<li><p>点击Run Selected Checks，查看检查结果，修复警告与故障。</p>
+<ul>
+<li>File-&gt;New Project-&gt;Project name-&gt;save location</li>
+<li>进入Polyspace界面<ul>
+<li>导入.c和.h文件：<ul>
+<li>选中Project Source Files，点击Browse,选择存放c文件的文件夹，点击open，该路径会出现在Select Source Folder中。之后现需要勾选Add recursively并点击下方的Add Source Folders,之后c代码会被添加到左侧树状图中。</li>
+<li>同理，在Project Include中添加头文件，添加方式如上。</li>
+</ul>
+</li>
+<li>添加完成后，Polyspace左侧的Project Browser中会显示项目名、Project Source File文件夹，以及相关的报告。</li>
+<li>RAM efficiency：代码生成配置，以少占用RAM空间优先（ERT配置）</li>
+<li>Traceability：代码生成配置，提供模型元素和代码之间的映射（ERT配置）</li>
+<li>Safety precaution：代码生成配置，提高生成代码的清晰度、确定性、鲁棒性、可验证性（ERT配置）</li>
+<li>Debugging：代码生成配置，用以调试代码生成构建过程</li>
+<li>MISRA C：2012 guidelines：代码生成配置，用以提高代码对MISRA C：2012准则的遵守</li>
+<li>Polyspace：代码生成配置，为后续继续使用Polyspace进行代码分析<br>当完成选择后，左侧面板会出现相应的Objective</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Warning类型：</p>
+<ul>
+<li>参数数值设置与Objective配置冲突</li>
+<li>模型生成代码的设置与Objective选项冲突</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Pluviophile
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://frances-yc.github.io/2025/02/27/Matlab%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" title="Matlab代码检查">https://frances-yc.github.io/2025/02/27/Matlab代码检查/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-</header>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 11 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/CodeGenerationAdvisor/" style="font-size: 12px; color: #ccc">CodeGenerationAdvisor</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/MacOS/" style="font-size: 12px; color: #ccc">MacOS</a> <a href="/tags/ModelAdvisor/" style="font-size: 12px; color: #ccc">ModelAdvisor</a> <a href="/tags/Polyspace/" style="font-size: 12px; color: #ccc">Polyspace</a> <a href="/tags/autobox/" style="font-size: 12px; color: #ccc">autobox</a> <a href="/tags/dspace/" style="font-size: 12px; color: #ccc">dspace</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/next-theme/" style="font-size: 12px; color: #ccc">next theme</a> <a href="/tags/simulink/" style="font-size: 30px; color: #111">simulink</a> <a href="/tags/staticCheck/" style="font-size: 21px; color: #6f6f6f">staticCheck</a>
-            </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/simulink/" rel="tag"># simulink</a>
+              <a href="/tags/staticCheck/" rel="tag"># staticCheck</a>
+              <a href="/tags/CodeGenerationAdvisor/" rel="tag"># CodeGenerationAdvisor</a>
+              <a href="/tags/Polyspace/" rel="tag"># Polyspace</a>
           </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
 
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/02/27/Model-Advisor/" rel="prev" title="Model Advisor">
+      <i class="fa fa-chevron-left"></i> Model Advisor
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
@@ -276,6 +427,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-Generation-Advisor"><span class="nav-number">1.</span> <span class="nav-text">Code Generation Advisor</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Polyspace"><span class="nav-number">2.</span> <span class="nav-text">Polyspace</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

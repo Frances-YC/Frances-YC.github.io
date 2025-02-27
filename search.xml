@@ -2234,6 +2234,92 @@
       <tags>
         <tag>simulink</tag>
         <tag>staticCheck</tag>
+        <tag>ModelAdvisor</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab代码检查</title>
+    <url>/2025/02/27/Matlab%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/</url>
+    <content><![CDATA[<h1 id="Code-Generation-Advisor"><a href="#Code-Generation-Advisor" class="headerlink" title="Code Generation Advisor"></a>Code Generation Advisor</h1><ol>
+<li><p>打开方式：simulink-&gt;Code-&gt;C&#x2F;C++ Code-&gt;Code Generation Advisor</p>
+</li>
+<li><p>使用方法：</p>
+<ul>
+<li><p>点击Code Generation Advisor，弹出System Selector对话框，选择需要进行语法检查的模型，可以是全部模型，也可以是子模型。选择后点击OK</p>
+</li>
+<li><p>进入Code Generation Advisor界面，在Code Generation Objective中可以选择代码的生成形式</p>
+<ul>
+<li><p>Execution efficiency:代码生成配置，以代码执行效率优先</p>
+</li>
+<li><p>ROM efficiency：代码生成配置，以少占用ROM空间优先（ERT配置）</p>
+</li>
+<li><p>RAM efficiency：代码生成配置，以少占用RAM空间优先（ERT配置）</p>
+</li>
+<li><p>Traceability：代码生成配置，提供模型元素和代码之间的映射（ERT配置）</p>
+</li>
+<li><p>Safety precaution：代码生成配置，提高生成代码的清晰度、确定性、鲁棒性、可验证性（ERT配置）</p>
+</li>
+<li><p>Debugging：代码生成配置，用以调试代码生成构建过程</p>
+</li>
+<li><p>MISRA C：2012 guidelines：代码生成配置，用以提高代码对MISRA C：2012准则的遵守</p>
+</li>
+<li><p>Polyspace：代码生成配置，为后续继续使用Polyspace进行代码分析</p>
+<p>当完成选择后，左侧面板会出现相应的Objective</p>
+</li>
+</ul>
+</li>
+<li><p>点击Run Selected Checks，查看检查结果，修复警告与故障。</p>
+</li>
+</ul>
+</li>
+<li><p>Warning类型：</p>
+<ul>
+<li>参数数值设置与Objective配置冲突</li>
+<li>模型生成代码的设置与Objective选项冲突</li>
+</ul>
+</li>
+</ol>
+<h1 id="Polyspace"><a href="#Polyspace" class="headerlink" title="Polyspace"></a>Polyspace</h1><ol>
+<li><p>打开方式：应用程序-&gt;代码验证-&gt;Polyspace Bug Finder</p>
+</li>
+<li><p>使用方法：</p>
+</li>
+<li><p>点击Run Selected Checks，查看检查结果，修复警告与故障。</p>
+<ul>
+<li>File-&gt;New Project-&gt;Project name-&gt;save location</li>
+<li>进入Polyspace界面<ul>
+<li>导入.c和.h文件：<ul>
+<li>选中Project Source Files，点击Browse,选择存放c文件的文件夹，点击open，该路径会出现在Select Source Folder中。之后现需要勾选Add recursively并点击下方的Add Source Folders,之后c代码会被添加到左侧树状图中。</li>
+<li>同理，在Project Include中添加头文件，添加方式如上。</li>
+</ul>
+</li>
+<li>添加完成后，Polyspace左侧的Project Browser中会显示项目名、Project Source File文件夹，以及相关的报告。</li>
+<li>RAM efficiency：代码生成配置，以少占用RAM空间优先（ERT配置）</li>
+<li>Traceability：代码生成配置，提供模型元素和代码之间的映射（ERT配置）</li>
+<li>Safety precaution：代码生成配置，提高生成代码的清晰度、确定性、鲁棒性、可验证性（ERT配置）</li>
+<li>Debugging：代码生成配置，用以调试代码生成构建过程</li>
+<li>MISRA C：2012 guidelines：代码生成配置，用以提高代码对MISRA C：2012准则的遵守</li>
+<li>Polyspace：代码生成配置，为后续继续使用Polyspace进行代码分析<br>当完成选择后，左侧面板会出现相应的Objective</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Warning类型：</p>
+<ul>
+<li>参数数值设置与Objective配置冲突</li>
+<li>模型生成代码的设置与Objective选项冲突</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>simulink</tag>
+        <tag>staticCheck</tag>
+        <tag>CodeGenerationAdvisor</tag>
+        <tag>Polyspace</tag>
       </tags>
   </entry>
 </search>
