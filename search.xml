@@ -103,4 +103,132 @@
         <tag>MacOS</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Protected Models for Model Reference</title>
+    <url>/2025/02/27/Protected-Models-for-Model-Reference/</url>
+    <content><![CDATA[<h1 id="模型保护介绍"><a href="#模型保护介绍" class="headerlink" title="模型保护介绍"></a>模型保护介绍</h1><ol>
+<li>加密方法采用AES-265</li>
+<li>要定位受保护的模型，需要查找：</li>
+</ol>
+<ul>
+<li><p>MATLAB文件夹浏览器中带有徽章图标的文件</p>
+</li>
+<li><p>在左下角带有徽章图标的Model模块</p>
+</li>
+<li><p>扩展名为.slxp的文件（p.s.受保护的模型不会出现在Model Explorer的模型层次结构中）</p>
+</li>
+</ul>
+<ol start="3">
+<li>引用受保护的模型</li>
+</ol>
+<ul>
+<li><p>检查受保护模型是否支持所需的功能（受保护模型报告将显示所支持的功能）</p>
+</li>
+<li><p>检查自己的simulink版本是否支持该受保护模型</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>跨版本支持</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只读视图</td>
+<td>在R2018b或更高版本中保护的模型可以在其原始版本和更高版本中使用</td>
+</tr>
+<tr>
+<td>Normal模式下的方针</td>
+<td>在R2018b或更高版本中保护的模型可以在其原始版本和更高版本中使用</td>
+</tr>
+<tr>
+<td>Accelerator模式下的仿真</td>
+<td>不支持跨版本</td>
+</tr>
+<tr>
+<td>SIL或PIL模式下的仿真</td>
+<td>不支持跨版本</td>
+</tr>
+<tr>
+<td>Rapid Accelerator模式下的仿真</td>
+<td>不支持跨版本</td>
+</tr>
+<tr>
+<td>代码生成</td>
+<td>不支持跨版本</td>
+</tr>
+</tbody></table>
+<ul>
+<li>确认可以访问在受保护模型中使用的许可证。如果可用，受保护模型报告会显示所需的许可证。</li>
+<li>如果计划对受保护模型进行仿真，请使用曾用于创建受保护模型的相同平台。软件将受保护模型存储为已编译的 MEX 二进制文件。</li>
+<li>如果接收了一个受保护的模型包，请按照随附的说明解包文件。</li>
+<li>确保受保护模型位于 MATLAB 路径上。</li>
+<li>如果接收了一个框架模型，请将框架模型中的 Model 模块复制到您的模型中。否则，请在 Model 模块中引用受保护模型。</li>
+<li>当设置 Model 模块以引用受保护模型时，模块的 <strong>Simulation mode</strong> 变为 <code>Accelerator</code>。不能更改此模式或在外部模式下使用此 Model 模块。</li>
+</ul>
+<h1 id="高版本Matlab匹配"><a href="#高版本Matlab匹配" class="headerlink" title="高版本Matlab匹配"></a>高版本Matlab匹配</h1><p>下述方法针对于2016b等高版本</p>
+<h2 id="子系统转换为模型的引用"><a href="#子系统转换为模型的引用" class="headerlink" title="子系统转换为模型的引用"></a>子系统转换为模型的引用</h2><ol>
+<li><p>将待转换的部分使用CTRL + G合成子系统，并为该子系统命名保存。</p>
+</li>
+<li><p>使用如下的matlab语句进行子系统向模型引用转换</p>
+<p><code>Simulink.SubSystem.convertToModelReference( &#39;simulink文件名称/要保护的子系统名称&#39;, &#39;新模型引用名称，与之前的子系统名称不同&#39;, &#39;AutoFix&#39;, true,  &#39;ReplaceSubsystem&#39;, true, &#39;CheckSimulationResults&#39;, true);</code></p>
+</li>
+<li><p>将转换后的模型引用进行保存。</p>
+</li>
+</ol>
+<h2 id="模型保护："><a href="#模型保护：" class="headerlink" title="模型保护："></a>模型保护：</h2><ol>
+<li>对上述保存的模型引用右键，选择<code>Subsystem&amp;Model Reference-&gt;Create Protected Model for Selected Model Block.</code></li>
+<li>出现对话框，勾选<code>simulink</code>与<code>use generated code</code>，并填写密码（每一行填写相同的密码，该密码至少为4位）</li>
+<li>存储地址与<code>create hardness model for protected model</code>,可以选择性勾选。</li>
+<li>点击<code>create</code>，构建受保护模型。</li>
+<li>文件夹中出现的后缀为<code>.slxp</code>的即为创建的受保护模型。</li>
+</ol>
+<h2 id="使用受保护的模型"><a href="#使用受保护的模型" class="headerlink" title="使用受保护的模型"></a>使用受保护的模型</h2><ol>
+<li>对模型左下角的盾牌符号右键，选择<code>Authorize</code>,输入<code>Simulation</code>与<code>Code Generation</code>的密码，点击<code>OK</code>，即可对该模型进行仿真与代码生成。</li>
+<li>授权的时间为本次<code>matlab</code>软件使用时间。</li>
+</ol>
+<h1 id="低版本Matlab匹配"><a href="#低版本Matlab匹配" class="headerlink" title="低版本Matlab匹配"></a>低版本Matlab匹配</h1><p>上述方法针对于2016b等高版本，该方法在2012b等低版本上会出现不适配的情况，所以做新的方法说明:</p>
+<h2 id="子系统转换为模型引用"><a href="#子系统转换为模型引用" class="headerlink" title="子系统转换为模型引用"></a>子系统转换为模型引用</h2><ol>
+<li>右键子系统-&gt;Block Parameters-&gt;勾选 Treat as atomic unit -&gt; Sample time &#x3D; -1-&gt;Apply.</li>
+<li>右键子系统-&gt;Subsystem &amp; Model Reference-&gt;Convert Subsystem to -&gt; Referenced Model（如果出现提示，选择continue conversion）。</li>
+<li>模型引用生成，保存新的simulink模型引用。</li>
+</ol>
+<h2 id="模型引用转换为受保护的模型"><a href="#模型引用转换为受保护的模型" class="headerlink" title="模型引用转换为受保护的模型"></a>模型引用转换为受保护的模型</h2><ol>
+<li>右键模型引用-&gt; Subsystem &amp; Model Reference-&gt;Create Protected Model for Selected Model Block.</li>
+<li>出现对话框，如果需要将模型转换为代码，则勾选Include generated code(Create harness model for protecred model按需勾选)。</li>
+<li>点击create，完成创建。</li>
+</ol>
+<h2 id="受保护模型的使用"><a href="#受保护模型的使用" class="headerlink" title="受保护模型的使用"></a>受保护模型的使用</h2><p>点击受保护模型，出现模型说明文档，点击代码生成（勾选<code>include generated code</code>），则直接生成代码，无需填写密码。</p>
+<h1 id="环境设置（针对autoBox"><a href="#环境设置（针对autoBox" class="headerlink" title="环境设置（针对autoBox)"></a>环境设置（针对autoBox)</h1><p>在对保护模型进行代码生成时，需要对受保护模型的基础模型进行环境设置，如果需要在autobox上运行，需要按照autobox的环境配置进行设置，</p>
+<p>如果需要在其他的处理器上运行，则需要按照该处理器对模型环境的要求进行修改。</p>
+<p>环境变量设置（autobox）：</p>
+<ol>
+<li><code>fundamental sample time</code>，需要与调用模型的仿真周期设置一致。</li>
+<li><code>Singal Logging</code>：一般设置为最终的输出值</li>
+<li><code>Inline Prameter</code>：针对2012版matlab，不进行选择</li>
+<li>其余的设置按照dspace的要求进行</li>
+</ol>
+<h1 id="保护模型生成问题"><a href="#保护模型生成问题" class="headerlink" title="保护模型生成问题"></a>保护模型生成问题</h1><ol>
+<li>如果在模型保护过程中出现<code>cannot be used with a variable-step solver</code>问题，请将原模型引用的解算器更改为离散定步长。</li>
+<li>受保护模型中不能出现另一个受保护模型。</li>
+</ol>
+<h2 id="Error解释："><a href="#Error解释：" class="headerlink" title="Error解释："></a>Error解释：</h2><ol>
+<li>Input port 1 of the specified subsystem block has constant sample time. Cannot convert subsystems with constant inputs to model reference.</li>
+</ol>
+<p>　　该Error的解决方式是断开所有的输入，再次进行引用操作</p>
+<ol start="2">
+<li>The model ‘xxxxx’ cannot be protected because it or a model that it directly or indirectly references contains a non-inlined S-Function.</li>
+</ol>
+<p>　　该Error出现在保护模型过程中，目前定位问题为模型中大量使用了属性为Global的goto&#x2F;from标签</p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>simulink</tag>
+        <tag>autobox</tag>
+        <tag>dspace</tag>
+      </tags>
+  </entry>
 </search>
